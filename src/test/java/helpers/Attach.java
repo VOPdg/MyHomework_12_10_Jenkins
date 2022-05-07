@@ -1,7 +1,6 @@
 package helpers;
 
 
-
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
@@ -56,7 +55,7 @@ public class Attach {
         return null;
     }
 
-    public static String getSessionId(){
+    public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
 }

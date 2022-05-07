@@ -3,6 +3,7 @@ package guru.qa;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -12,12 +13,20 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static java.lang.String.format;
-@Tag("demoqa") // тэг чтобы запустить определенную команду
-public class DemoqaTests {
 
+@Tag("demoqa") // тэг чтобы запустить определенную команду
+public class DemoqaTests extends TestBase {
+    @BeforeAll
+    static void setUp() {
+        //Configuration.holdBrowserOpen = true;  чтобы браузер не закрывался
+        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browserSize = "1920x1080";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+    }
 
     @Test
-    void fillformTest() {
+    @DisplayName("Successful fill registration test")
+    void fillFormTest() {
         String name = "Vera";
         String lastName = "Podguk";
         String email = "testForm@mailinator.com";
