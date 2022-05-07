@@ -72,6 +72,8 @@ public class DemoqaTests {
                 text("Minsk, 220117"),
                 text("NCR Delhi"));
         $("#closeLargeModal").click();
+        //проверка что форма закрыта
+        $("#closeLargeModal").isEnabled();
         //$(".table-responsive").shouldHave(text(name +" "+ lastname), text("testForm@mailinator.com"), text("Other"));
         //$(".table-responsive").$(byText("Student Name"))
         ////                .parent().shouldHave(text(name +" "+ lastname));
