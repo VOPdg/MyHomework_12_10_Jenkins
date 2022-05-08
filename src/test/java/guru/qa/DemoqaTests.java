@@ -16,14 +16,6 @@ import static java.lang.String.format;
 
 @Tag("demoqa") // тэг чтобы запустить определенную команду
 public class DemoqaTests extends TestBase {
-    @BeforeAll
-    static void setUp() {
-        //Configuration.holdBrowserOpen = true;  чтобы браузер не закрывался
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-    }
-
     @Test
     @DisplayName("Successful fill registration test")
     void fillFormTest() {
